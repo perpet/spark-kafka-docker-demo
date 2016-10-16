@@ -1,11 +1,13 @@
 kafka:
+  hostname: kafka01
   image: antlypls/kafka:0.10.0.1
   environment:
     - KAFKA=localhost:9092
     - ZOOKEEPER=localhost:2181
   expose:
     - "2181"
-    - "9092"
+  ports:
+    - "9092:9092"
 
 spark:
   image: antlypls/spark:1.6.2
